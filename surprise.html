@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=], initial-scale=1.0">
+    <title>Simple Romantic</title>
+</head>
+<body>
+    <div id="questionario" class="questionario">
+        <h1>Simple question</h1>
+        <p>Do you love me?</p>
+        <br>
+
+        <div class="botoes">
+            <button onclick="sim()">YES!</button>
+            <button id="btnNao" onclick="desvia()" onmouseover="desvia()">no</button>
+        </div>
+
+    </div>
+</body>
+
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500;600&display=swap');
+
+    *{
+        margin: 0;
+        padding: 0;
+        border: 0;
+        outline: none;
+        box-sizing: border-box;
+        font-family: "Montserrat";
+    }
+
+    body{
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content:center;
+        background: rgb(2,255,236);
+        background: linear-gradient(360deg, rgba(2,255,236,1) 0%, rgba(0,129,255,1) 100%);
+        font-family: "Montserrat";
+        color: black;
+        transition: 0.6s ease-in-out;
+    }
+
+    .questionario{
+        position: relative;
+        width: 300px;
+        height: 225px;
+        background: #f6f7eb;
+        padding: 28px 32px;
+        overflow: hidden;
+        border-radius: 18px;
+        transition: 0.6s ease-out;
+        box-shadow: 1.2em 2em 3em rgba(0,0,0,0.175);
+    }
+
+    .questionario h1{
+        font-weight: bold;
+        text-align: center;
+        justify-content: center;
+    }
+
+    .questionario p{
+        padding: 5px;
+        font-weight: lighter;
+        text-align: center;
+    }
+
+    .botoes{
+        text-align: center;
+    }
+
+    .botoes button{
+        width: 50px;
+        height: 50px;
+        margin: auto;
+        cursor: pointer;
+        border-radius: 0.3em;
+        font-size: 20px;
+        transition: 0.3s ease-in-out;
+        color: white;
+        background-color: darkblue;
+        font-weight: lighter;
+    }
+
+    .botoes button:hover{
+        color: white;
+        font-weight: bold;
+        background: rgb(41, 41, 255);
+    }
+</style>
+<script>
+    function sim(){
+        alert("You are the woman of my life, I love you! ❤️");
+    }
+    function desvia(){
+        let btn = document.getElementById("btnNao");
+        btn.style.position = 'absolute';
+        btn.style.bottom = randomCoordinates(0,80);
+        btn.style.left = randomCoordinates(0,80);
+    }
+
+    function randomCoordinates(min,max){
+        return (Math.random() * (max - min) + min) + "%";
+    }
+</script>
+</html>
